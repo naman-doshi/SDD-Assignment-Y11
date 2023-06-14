@@ -150,7 +150,7 @@ def index():
 
 # Method to return questions to the front end
 @app.route('/getQuestions', methods=['POST', 'GET'])
-def predict():
+def getQuestions():
     if request.method == 'POST':
         # Processing the data from the frontend
         file = request.form
