@@ -1,0 +1,301 @@
+/* COLOURS: */
+/* #ffffff
+   #300077
+   #4d248a
+   #6b489d
+   #886db1 */
+
+* {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 10px;
+  /* 1 rem is 10 px */
+}
+
+body {
+  line-height: 1;
+  font-weight: 400;
+  color: #141414;
+}
+
+h4 {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin-top: 32px;
+}
+
+h2 {
+  margin-top: 0.8rem;
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #141414;
+}
+
+p {
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.009em;
+  line-height: 1.5;
+  color: #1f2d3d;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ************************************** */
+/* HEADER  */
+/* ************************************** */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 9.6rem;
+  padding: 0 2.6rem;
+  position: relative;
+}
+
+.logo {
+  height: 4.8rem;
+}
+
+/* STICKY NAVIGATION */
+.header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 999;
+  background-color: white;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-section:visited {
+  text-decoration: none;
+}
+
+.logo-text {
+  margin-top: 0;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #300077;
+  text-decoration: none;
+  font-family: "Figtree";
+}
+
+.restricted-width {
+  width: 65%;
+  max-width: 1120px;
+}
+
+/* ************************************** */
+/* OPTION BAR  */
+/* ************************************** */
+.shown {
+  width: 800px;
+  height: 500px;
+  margin: 18rem auto;
+  background-color: #faf9fc;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
+}
+
+.options {
+  padding: 1.6rem;
+  background-color: #f3f0f7;
+  height: 36px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+}
+
+#option-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.option-items {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+}
+
+#game-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-settings label {
+  margin-right: 0.8rem;
+}
+
+#numQuestions {
+  margin-right: 1.6rem;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #300077;
+}
+
+/* ************************************** */
+/* Introductory Page  */
+/* ************************************** */
+
+#introduction {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 2.4rem;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.intro-title {
+  font-size: 3.6rem;
+}
+
+#introduction p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.startbutton {
+  margin-top: 2.4rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background-color: #300077;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 300ms ease 0s;
+}
+
+.startbutton:hover {
+  background-color: #4d248a;
+}
+
+/* ************************************** */
+/* Intermediary Pages (Loading, Ending)  */
+/* ************************************** */
+
+.intermediaryPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intermediaryPage h1 {
+  font-size: 4.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.intermediaryPage p {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+#finalScore {
+  font-weight: 600;
+}
+
+/* ************************************** */
+/* Questions  */
+/* ************************************** */
+
+#score {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.score-box {
+  padding: 1.6rem;
+  background-color: #f3f0f7;
+  height: 36px;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+}
+
+#actualQuestion {
+  position: absolute;
+  z-index: 999;
+  width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+#confettiBox {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+}
+
+#question {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 2.4rem;
+  justify-content: center;
+  align-self: center;
+}
+
+#question p {
+  text-align: center;
+}
+
+#questionText {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.answerOption {
+  width: 100%;
+  padding: 1.6rem;
+  background-color: #f3f0f7;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  margin-top: 1.6rem;
+  cursor: pointer;
+  transition: background 300ms ease 0s;
+  line-height: 1.5;
+}
+
+.answerOption:hover {
+  background-color: #ebe6f2;
+}

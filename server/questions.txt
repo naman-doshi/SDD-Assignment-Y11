@@ -1,0 +1,120 @@
+Which of the following is true about physical RAM?
+It is not volatile.
+It performs faster than the CPU.
+It stores all installed programs in memory.
+It is composed of two levels of cache.
+D
+What is a difference between primary & secondary storage?
+Primary storage devices generally have more capacity than secondary storage devices.
+Secondary storage works closely with the processor, while primary storage does not.
+Primary storage requires power to retain its contents, while secondary storage does not.
+There is no difference — the terms are interchangeable.
+C
+Which of the following is Moore's Law?
+The number of transistors in a chip will double every 18 months.
+The speed of a processor will double every 2 years.
+The number of transistors in a chip will double every year.
+Quantum computing is inevitable.
+A
+What is the purpose of the branch predictor within a CPU?
+It utilises machine learning to predict all of the user's actions.
+It attempts to guess the most likely next instruction and determine its reliance on previous instructions.
+It is a temporary storage area.
+It enables two programs to be run simultaneously on a single thread.
+B
+Which of the following is an acronym for an implementation of the von Neumann architecture with a reduced instruction set?
+CISC
+RISC
+ARM
+AMD
+B
+An integer is best described as: 
+A fraction of a number. 
+A whole number.
+A negative number.
+A positive number.
+B
+Another term for main memory is:
+Primary storage.
+Secondary storage.
+Processing storage.
+Cache.
+A
+Printers, plotters and monitors are examples of:
+Input devices.
+Control devices.
+Output devices.
+Secondary storage devices.
+C
+Processing and control functions are performed by:
+Transistors.
+Random Access Memory.
+Ferrous-oxide platters.
+An input device.
+A
+The component that provides communication between the CPU and RAM is the:
+Code cache.
+Bus interface.
+Data cache.
+Dranch predictor.
+B
+The chip that is able to hold a binary state without the need for recharging is called a:
+Dynamic RAM chip.
+Static RAM chip.
+ROM chip.
+None of the above.
+B
+The function that transforms inputs into outputs is called:
+Processing.
+Control.
+Transformation. 
+Storage.
+A
+The storage that remains when the power is turned off is known as:
+Secondary storage.
+Permanent storage.
+Non-volatile storage.
+All of the above.
+D
+Memory areas that are used to store instructions currently being used by the CPU are called:
+Registers.
+Control units.
+Instruction sets.
+None of the above.
+A
+The component that performs all non-integer numeric calculations is called the:
+Register.
+Arithmetic Logic Unit.
+Data Cache.
+Floating Point Unit.
+D
+Consider a simple array-shifting algorithm. What is the role of the register in the execution of this code?
+To add numbers together and store the result in the accumulator
+To add numbers together and store the results in memory locations
+To store numbers, before and after being processed in the accumulator
+To store numbers, before and after being processed in memory locations
+C
+Which of the following is used in the CPU to store the results of a computation?
+Accumulator
+Control unit
+Program counter
+ROM
+A
+Which of the following occurs in a CPU when a subroutine is called?
+The accumulator is incremented by 1.
+The program counter is incremented by 1.
+The accumulator is set to the start address of the subroutine.
+The program counter is set to the start address of the subroutine. 
+D
+What allows the CPU and memory of a computer to communicate with each other?
+Modem
+Keyboard
+System bus
+Device driver 
+C
+What does a program counter do?
+Counts the number of lines in a program
+Stores the number of CPU cycles to run the program
+Counts the number of times an instruction goes through a program
+Holds the address of the instruction being executed or to be executed 
+D
