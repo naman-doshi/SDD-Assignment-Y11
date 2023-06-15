@@ -44,13 +44,20 @@ def askBard(string):
         if len(line) > 5:
             # Checking if the line is a question
             if line[0].isnumeric():
+                if len(questions) != 0:
+                    if len(questions[-1]) != 6:
+                        return []
                 questions.append([line[3:]])
             # Checking if it's an answer option
             elif line[0] == '(':
+                if len(line[0]) < 5:
+                    return []
                 questions[-1].append(line[4:])
             # Checking if it's a correct answer in the format "The answer is (A)" just in case
-            elif '(' in line and ')' in line and len(questions[0]) > 3:
-                questions[-1].append(line[line.index('(')+1:line.index(')')])
+            elif '(' in line and ')' in line:
+                if len(questions) != 0:
+                    if len(questions[-1]) > 4:
+                        questions[-1].append(line[line.index('(')+1:line.index(')')])
             # Checking if it's a correct answer in the format "Answer: A"
             elif "answer:" in line.lower():
                 questions[-1].append(line[line.index(':')+2])
@@ -119,13 +126,9 @@ def loadFileQuestions(numQuestions):
 
 def loadBardQuestions(numQuestions):
     # Asking questions 10 at a time — the maximum that Bard can reliably provide in one answer
-    i = 0
     questions = []
-    while i < numQuestions:
-        questions += askBard(f"Please provide 10 moderately difficult multiple choice questions, 4 answer options (formatted as (A), (B), (C), (D)), and the correct answer (a new line formatted exactly like Answer: D) for the New South Wales Software Design and Development syllabus. Please respond with no formatting, and give me a variety of questions covering different aspects of the syllabus.")
-        i += 10
-
-
+    while len(questions) < numQuestions:
+        questions += askBard("Please provide 10 moderately difficult multiple choice questions, 4 answer options (formatted as (A), (B), (C), (D)), and the correct answer (a new line formatted exactly like Answer: D) for the New South Wales Software Design and Development syllabus. Please respond with no formatting, and give me a variety of questions covering different aspects of the syllabus. The format of your response should be: 1 line for the question, 4 lines for all the answer options, 1 line for the correct answer, and then a blank newline. Then you can move on to the next question.")
     # Randomising the order of the answer options and appending the correct answer's text to the end of the question
     letterToIndex = {'A': 1, 'B': 2, 'C':3, 'D':4}
     newQuestions = []

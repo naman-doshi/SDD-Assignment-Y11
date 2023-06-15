@@ -1,0 +1,1 @@
+print(len('XQiZghMm0QZxaKbw4rKUp7MepBVnKIlyd_ONNXG2oEwa9v3dbI0VKGAiWhGQBMVuq1tHcQ.'))
