@@ -1,6 +1,6 @@
 # WWTBUS User Documentation
 
-A Software Design & Development multiple-choice quiz game, available for installation at.
+A Software Design & Development multiple-choice quiz game, available for installation at [https://github.com/naman-doshi/SDD-Assignment-Y11](https://github.com/naman-doshi/SDD-Assignment-Y11).
 
 ---
 
@@ -13,7 +13,7 @@ Welcome to Who Wants to be a University Student! This is a multiple-choice quiz 
 Please make sure you have an internet connection to play this game!
 
 <aside>
-‼️ **DISCLAIMER:** Google Bard is not well-acquainted with the SDD syllabus, so there is a possibility that some questions are irrelevant or incorrect.
+‼️ DISCLAIMER: Google Bard is not well-acquainted with the SDD syllabus, so there is a possibility that some questions are irrelevant or incorrect.
 
 </aside>
 
