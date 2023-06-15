@@ -14,7 +14,7 @@ def askBard(string):
     apiNumber = numberOfAPI
 
     # Initialising Bard instance
-    token = os.getenv("BARD_0")
+    token = os.getenv("BARD_1")
     bard = Bard(token=token)
 
     # Repeatedly trying to get a response until it is successful
@@ -49,10 +49,14 @@ def askBard(string):
                 questions.append([line[3:]])
             # Checking if it's an answer option
             elif line[0] == '(':
+                if len(line) < 5:
+                    return []
                 questions[-1].append(line[4:])
             # Checking if it's a correct answer in the format "The answer is (A)" just in case
-            elif '(' in line and ')' in line and len(questions[0]) > 3:
-                questions[-1].append(line[line.index('(')+1:line.index(')')])
+            elif '(' in line and ')' in line:
+                if len(questions) != 0:
+                    if len(questions[-1]) > 4:
+                        questions[-1].append(line[line.index('(')+1:line.index(')')])
             # Checking if it's a correct answer in the format "Answer: A"
             elif "answer:" in line.lower():
                 questions[-1].append(line[line.index(':')+2])
@@ -70,7 +74,7 @@ while len(allQuestions) < 100:
     print(len(allQuestions))
     allQuestions += askBard(string)
 
-print(len(allQuestions))
-for line in allQuestions:
-    print(len(line))
-    print(line)
+# print(len(allQuestions))
+# for line in allQuestions:
+#     print(len(line))
+#     print(line)

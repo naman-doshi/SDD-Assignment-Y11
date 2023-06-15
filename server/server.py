@@ -50,7 +50,7 @@ def askBard(string):
                 questions.append([line[3:]])
             # Checking if it's an answer option
             elif line[0] == '(':
-                if len(line[0]) < 5:
+                if len(line) < 5 or len(questions) == 0:
                     return []
                 questions[-1].append(line[4:])
             # Checking if it's a correct answer in the format "The answer is (A)" just in case
@@ -60,7 +60,8 @@ def askBard(string):
                         questions[-1].append(line[line.index('(')+1:line.index(')')])
             # Checking if it's a correct answer in the format "Answer: A"
             elif "answer:" in line.lower():
-                questions[-1].append(line[line.index(':')+2])
+                if len(questions) != 0:
+                    questions[-1].append(line[line.index(':')+2])
 
     return questions
 
