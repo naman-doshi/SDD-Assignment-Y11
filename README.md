@@ -47,7 +47,7 @@ Once the file is downloaded, unzip it with any tool of your choice.
 
 ## Running the Game
 
-Type the following commands in your terminal window, making sure you are inside the folder titled SDD-Assignment-Y11.
+Type the following commands in your terminal window, making sure you are inside the folder titled SDD-Assignment-Y11-master.
 
 ```bash
 pip3 install -r requirements.txt
@@ -106,4 +106,4 @@ Directly below it is the the current question (bolded), and the four answer opti
 
 The ending page depicts your final score and the number of questions answered correctly. After each game, the result is saved to the file report.txt.
 
-To see the file, navigate to **SDD-Assignment-Y11/server/report.txt**
+To see the file, navigate to **SDD-Assignment-Y11-master/server/report.txt**
