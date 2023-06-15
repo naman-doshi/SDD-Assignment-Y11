@@ -5,6 +5,7 @@ import random
 from bardapi import Bard
 from dotenv import load_dotenv
 import os
+import webbrowser
 load_dotenv()
 
 # Function to get parsed Bard questions
@@ -202,5 +203,10 @@ def conclude():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+
+    # Opening the game in the user's default browser
+    if not os.environ.get("WERKZEUG_RUN_MAIN"):
+        webbrowser.open_new('http://127.0.0.1:8080/')
+
+    app.run(host='127.0.0.1', port=8080)
 
