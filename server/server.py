@@ -35,10 +35,14 @@ def askBard(string):
     # Splitting the response into lines
     ans = ans.splitlines()
 
+    # print(ans)
+
     # Deleting the first line (always useless) since it may trigger false positives in question detection
     del ans[0]
 
     questions = []
+
+    # questionFound = False
 
     for line in ans:
         # Checking if the line actually contains something of use (i.e. not blank)
@@ -48,6 +52,7 @@ def askBard(string):
                 if len(questions) != 0:
                     if len(questions[-1]) != 6:
                         return []
+                # questionFound = True
                 questions.append([line[3:]])
             # Checking if it's an answer option
             elif line[0] == '(':
@@ -63,6 +68,9 @@ def askBard(string):
             elif "answer:" in line.lower():
                 if len(questions) != 0:
                     questions[-1].append(line[line.index(':')+2])
+
+            # print(line, questionFound)
+
 
     return questions
 
@@ -122,6 +130,7 @@ def loadFileQuestions(numQuestions):
     
     # If the user requests more than 20 questions, the Bard API is used to generate the rest
     if numQuestions > 20:
+        # print(numQuestions - 20)
         doublyRandomisedQuestions += loadBardQuestions(numQuestions - 20)
 
     return doublyRandomisedQuestions

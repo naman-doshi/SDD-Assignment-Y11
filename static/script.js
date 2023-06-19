@@ -46,6 +46,7 @@ function estimateWaitingTime(numQuestions, LFQ) {
     // This works every time except when numQuestions = 10
     // But in this case, the actual loading time will be 0 seconds and thus this page will not be shown to the user.
     time = 0.9 * Math.abs(numQuestions - 20);
+    // console.log(time)
   } else {
     time = 0.9 * numQuestions;
   }
@@ -86,24 +87,32 @@ function logData(event) {
     LFQ: [includePreWrittenQuestions.checked],
   };
 
+  // console.log(params);
+
   // Appending the parameters to the form data
   formData.append("params", JSON.stringify(params));
 
   // Showing the loading page
   showLoadingPage(numQuestions.value, includePreWrittenQuestions.checked);
 
+  // responseReceived = false;
+
   // Setting a function to be called when the request is complete
   req.onreadystatechange = function () {
     if (req.readyState == XMLHttpRequest.DONE) {
-      // Get the questions from the backend, and start the game with these question
+      // Get the questions from the backend, and start the game with these questions
       var allQuestions = req.responseText;
+      // console.log(allQuestions);
       startGame(JSON.parse(allQuestions));
+      // responseReceived = true;
     }
   };
 
   // Sending the request to the endpoint /getQuestions
   req.open("POST", "/getQuestions");
   req.send(formData);
+
+  // console.log(responseReceived);
 }
 
 // Tedious function to show the ending page
@@ -138,6 +147,8 @@ function showEndingPage(correctAnswers, totalQuestions) {
     questionsAsked: [totalQuestions],
   };
 
+  // console.log(params);
+
   formData.append("params", JSON.stringify(params));
   req.open("POST", "/conclude");
   req.send(formData);
@@ -166,6 +177,8 @@ function startGame(list) {
   options.forEach((option) => {
     // It is a click listener
     option.addEventListener("click", () => {
+      // console.log(index);
+
       if (option.innerHTML === list[index][5]) {
         // If the user gets the question right, add confetti, double the score, and add 1 to the correct answers
         jsConfetti.addConfetti({
